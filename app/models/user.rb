@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  validates :email, presence: true, uniqueness: true
   validates :uid, uniqueness: { scope: :provider }, if: -> { uid.present? }
 
   def self.from_omniauth(auth)

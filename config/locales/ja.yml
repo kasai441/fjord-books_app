@@ -207,10 +207,11 @@ ja:
     pm: 午後
   views:
     common:
+      index: 本のリスト
       show: 詳細
       edit: 編集
       destroy: 削除
-      new: 新規作成
+      new: 本の追加
       back: 戻る
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
@@ -224,22 +225,15 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
-  layouts:
-    application:
-      menu: メニュー
-      sign_in_as: "%{email} としてログイン中"
-  users:
-    show:
-      followings: "%{count} フォロー"
-      followers: "%{count} フォロワー"
-      create: フォローする
-      destroy: フォロー解除する
-    followings:
-      index:
-        title: フォロー
-    followers:
-      index:
-        title: フォロワー
+    users:
+      index: ユーザーリスト
+      show: プロフィール
+      edit: プロフィール編集
+      login: ログイン
+      logout: ログアウト
+      signup: アカウント登録
+    registrations:
+      password_change_needs_current_password: パスワードの変更には現在のパスワード入力が必要です
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

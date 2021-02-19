@@ -1,3 +1,552 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*
+////////////////////////////////////////
+reset.css を読み込んで全てのスタイルをなくす
+////////////////////////////////////////
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+////////////////////////////////////////
+reset.css では足りない初期化を追加
+////////////////////////////////////////
+*/
+
+/* 全てに box-sizing: border-box; を適用 */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* 画像に関する初期設定 */
+img {
+  /* 大きい画像がはみ出さないように */
+  max-width: 100%;
+  /* 画像周りの無駄なスペースができないように */
+  vertical-align: bottom;
+}
+
+/*
+////////////////////////////////////////
+初期設定
+////////////////////////////////////////
+*/
+
+/*
+////////////////////////////////////////
+reset.css を読み込んで全てのスタイルをなくす
+////////////////////////////////////////
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+////////////////////////////////////////
+reset.css では足りない初期化を追加
+////////////////////////////////////////
+*/
+
+/* 全てに box-sizing: border-box; を適用 */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* 画像に関する初期設定 */
+img {
+  /* 大きい画像がはみ出さないように */
+  max-width: 100%;
+  /* 画像周りの無駄なスペースができないように */
+  vertical-align: bottom;
+}
+
+/*
+////////////////////////////////////////
+アプリ用設定
+////////////////////////////////////////
+*/
+
+:root {
+  --light_orange: #ffde9a;
+  --light_red: #fa7e7e;
+  --books: cornflowerblue;
+  --books_h: #78A6F8;
+  --users: orange;
+  --users_h: #ffde9a;
+  --book_new: #81bef5;
+  --book_new_h: #93d2f3;
+  --user_new: cornflowerblue;
+  --book_show: cornflowerblue;
+  --user_show: #ffbb3b;
+  --user_show_h: #fde3b2;
+  --book_edit: cornflowerblue;
+  --user_edit: #ffbb3b;
+  --session_new: cornflowerblue;
+  --logout: gray;
+  --logout_h: #DDDDDD;
+}
+
+html {
+  font-family: arial, sans-serif;
+}
+
+body {
+  color: #111;
+  background-color: #fffeff;
+  font-size: small;
+}
+
+/* 全体を真ん中に配置 */
+.container {
+  max-width: 980px;
+  width: 92%;
+  min-width: 200px;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fffeff;
+  box-shadow: rgba(0, 0, 0, .4) 0 0 0px;
+  /* floatを使った場合の対策 */
+  overflow: hidden;
+}
+
+.alert {
+  padding: 0.2em;
+  border: none;
+}
+
+.alert-success {
+  color: green;
+}
+
+.alert-danger {
+  color: red;
+}
+
+.navbar_items {
+  display: flex;
+}
+
+.navbar_item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_items .dummy {
+  flex-grow: 1;
+}
+
+.navbar_link {
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 0.5em;
+  margin-right: 2px;
+}
+
+.books .navbar_link {
+  background-color: var(--books);
+}
+
+.books .navbar_link:hover {
+  background-color: var(--books_h);
+}
+
+.new .navbar_link {
+  background-color: var(--book_new);
+}
+
+.new .navbar_link:hover {
+  background-color: var(--book_new_h);
+}
+
+.dummy .navbar_link {
+  background-color: transparent;
+}
+
+.users .navbar_link {
+  background-color: var(--users);
+}
+
+.users .navbar_link:hover {
+  background-color: var(--users_h);
+}
+
+.email .navbar_link {
+  background-color: var(--user_show);
+  width: auto;
+}
+
+.email .navbar_link:hover {
+  background-color: var(--user_show_h);
+}
+
+.logout .navbar_link {
+  background-color: white;
+  color: var(--logout);
+  border: 1px solid var(--logout);
+  border-bottom: none;
+}
+
+.logout .navbar_link:hover {
+  background-color: var(--logout_h);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 1em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.books_title {
+  background-color: var(--books);
+}
+
+.users_title {
+  background-color: var(--users);
+}
+
+.book_new_title {
+  background-color: var(--book_new);
+}
+
+.user_new_title {
+  background-color: var(--user_new);
+}
+
+.session_new_title {
+  background-color: var(--session_new);
+}
+
+.book_show_title {
+  background-color: var(--book_show);
+}
+
+.user_show_title {
+  background-color: var(--user_show);
+}
+
+.book_edit_title {
+  background-color: var(--book_edit);
+}
+
+.user_edit_title {
+  background-color: var(--user_edit);
+}
+
+.main_table {
+  width: 100%;
+}
+
+.main_table th {
+  padding: 1em;
+  border-bottom: 1.4px solid #CCCCCC;
+  font-size: 1.1em;
+}
+
+.main_table td {
+  padding: .4em .5em;
+  height: 2.8em;
+  vertical-align: middle;
+  border-bottom: 0.5px solid #EEEEEE;
+}
+
+.main_table .nowrap {
+  white-space: nowrap;
+}
+
+.pagination {
+  padding: 1em;
+  text-align: center;
+}
+
+.show {
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+.show_picture {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.show_items {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.show_item {
+  padding-bottom: 1em;
+  display: flex;
+}
+
+.show_item__label{
+  width: 15%;
+  text-align: right;
+  padding-right: 1em;
+  font-weight: bold;
+}
+
+.show_item__content {
+  width: 85%;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_items {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+}
+
+.field {
+  display: flex;
+  min-height: 50px;
+  padding: 0.5em 0;
+}
+
+.field i {
+  font-weight: normal;
+  font-style: italic;
+}
+
+#error_explanation {
+  color: red;
+  background-color: lightpink;
+  padding: 0.8em;
+  margin-top: 1em;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+#book_memo {
+  min-height: 80px;
+}
+
+.form_items__label {
+  font-weight: bold;
+  width: 20%;
+  text-align: right;
+  padding: 0.4em 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_items__label .field_with_errors {
+  color: red;
+}
+
+.form_items__content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_items__content input {
+  flex: 1;
+}
+
+.form_items__content .field_with_errors {
+  flex: 1;
+  display: flex;
+}
+
+.form_items__footnote {
+  text-align: right;
+}
+
+.rememberme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1em;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.btn {
+  text-align: center;
+  min-width: 200px;
+  text-decoration: none;
+  border: none;
+  padding: 1em;
+  margin: 0 1em;
+}
+
+.orange_btn {
+  background-color: orange;
+  color: white;
+}
+
+.orange_btn:hover {
+  background-color: var(--light_orange);
+}
+
+.blue_btn {
+  background-color: royalblue;
+  color: white;
+}
+
+.blue_btn:hover {
+  background-color: cornflowerblue;
+}
+
+.white_btn {
+  background-color: white;
+  color: inherit;
+  border: 1px solid #CCCCCC;
+}
+
+.white_btn:hover {
+  background-color: #CCCCCC;
+  color: white;
+  border: 1px solid #CCCCCC;
+}
+
+.form_btn {
+  padding: 0.8em;
+}
+
+.red_btn {
+  padding: 0.8em;
+  background-color: indianred;
+  color: white;
+}
+
+.red_btn:hover {
+  background-color: var(--light_red);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.stats a {
+  padding: 0 10px;
+  border-left: 1px solid gray;
+  color: gray;
+}
+
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+
+.stats a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.stats strong {
+  display: flex;
+}

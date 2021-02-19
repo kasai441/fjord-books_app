@@ -1,0 +1,6 @@
+<%= form_with(url: user_relationships_path(@user), local: true) do |f| %>
+  <div><%= f.hidden_field :following_id %></div>
+  <div class="actions">
+    <%= f.submit "Follow", class: "btn orange_btn" %>
+  </div>
+<% end %>
