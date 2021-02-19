@@ -66,11 +66,20 @@ User.transaction do
       self_introduction: "こんにちは、#{name}です。"
     )
   end
-end
 
-User.order(:id).each do |user|
-  image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
-  user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
+  User.create!(
+    email: 'test@mail.com',
+    password: 'password',
+    name: 'test',
+    postal_code: '123-4567',
+    address: 'マンボウ区エビ1-2-3 プランクトン456',
+    self_introduction: 'わたしは　おおくて　めだつ　さかな　です'
+  )
+
+  User.order(:id).each do |user|
+    # image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
+    # user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
+  end
 end
 
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output

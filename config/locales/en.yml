@@ -215,10 +215,11 @@ en:
     pm: pm
   views:
     common:
+      index: "Books List"
       show: Show
       edit: Edit
       destroy: Destroy
-      new: "New record"
+      new: "New book"
       back: Back
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
@@ -226,6 +227,19 @@ en:
       title_show: "%{name} Details"
       sign_out: "Sign out"
       minimum_length: "%{length} characters minimum"
+    pagination:
+      first: First
+      last: Last
+      previous: Previous
+      next: Next
+      truncate: '...'
+    users:
+      index: "All Users"
+      show: "Profile"
+      edit: "Edit Profile"
+      login: "Log In"
+      logout: "Log Out"
+      signup: "Sign Up"
   controllers:
     common:
       notice_create: "%{name} was successfully created."
