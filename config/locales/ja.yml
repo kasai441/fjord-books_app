@@ -207,16 +207,10 @@ ja:
     pm: 午後
   title: 'ブックアプリ'
   books:
-    index:
-      head: '本'
     new:
       head: '新規作成'
     edit:
       head: '編集'
-    title: 'タイトル'
-    memo: 'メモ'
-    author: '作者'
-    picture: '表紙'
     link:
       show: '詳細'
       edit: '編集'

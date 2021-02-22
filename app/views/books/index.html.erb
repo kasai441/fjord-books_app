@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t '.head' %></h1>
+<h1><%= Book.model_name.human %></h1>
 
 <table>
   <thead>
     <tr>
-      <th><%= t 'books.title' %></th>
+      <th><%= Book.human_attribute_name("title") %></th>
       <th><%= t 'books.memo' %></th>
       <th><%= t 'books.author' %></th>
       <th><%= t 'books.picture' %></th>
