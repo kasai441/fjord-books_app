@@ -215,16 +215,10 @@ en:
     pm: pm
   title: 'BooksApp'
   books:
-    index:
-      head: 'Books'
     new:
       head: 'New Book'
     edit:
       head: 'Editing Book'
-    title: 'Title'
-    memo: 'Memo'
-    author: 'Author'
-    picture: 'Picture'
     link:
       show: 'Show'
       edit: 'Edit'
