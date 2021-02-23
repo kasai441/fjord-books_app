@@ -61,4 +61,4 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'devise'
 gem 'devise-i18n'
-gem 'letter_opener_web', '~> 1.0'
+gem 'letter_opener_web', '~> 1.0', :group => :development
