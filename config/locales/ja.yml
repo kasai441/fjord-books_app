@@ -207,6 +207,7 @@ ja:
     pm: 午後
   views:
     common:
+      home: ホーム
       show: 詳細
       edit: 編集
       destroy: 削除
@@ -224,6 +225,12 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    users:
+      index: ユーザーリスト
+      edit: プロフィール編集
+      login: ログイン
+      logout: ログアウト
+      signup: アカウント登録
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
