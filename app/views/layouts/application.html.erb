@@ -19,16 +19,13 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
 
-      <ul class="navbar-items">
+      <ul class="navbar_items">
         <% if user_signed_in? %>
-          <li class="navbar-item"><strong><%= current_user.email %></strong></li>
-          <li class="navbar-item"><%= link_to t('views.users.edit'), edit_user_registration_path, class: 'navbar-link' %></li>
-          <li class="navbar-item"><%= link_to t('views.users.index'), users_path, class: 'navbar-link' %></li>
-          <li class="navbar-item"><%= link_to t('views.users.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %></li>
-          <li class="navbar-item"><%= link_to t('views.common.home'), books_path, class: 'navbar-link' %></li>
-        <% else %>
-          <li class="navbar-item"><%= link_to t('views.users.signup'), new_user_registration_path, class: 'navbar-link'  %> |</li>
-          <li class="navbar-item"><%= link_to t('views.users.login'), new_user_session_path, class: 'navbar-link'  %></li>
+          <li class="navbar_item email"><strong><%= current_user.email %></strong></li>
+          <li class="navbar_item"><%= link_to t('views.users.edit'), edit_user_registration_path, class: 'navbar_link edit_user' %></li>
+          <li class="navbar_item"><%= link_to t('views.users.index'), users_path, class: 'navbar_link users' %></li>
+          <li class="navbar_item"><%= link_to t('views.users.logout'), destroy_user_session_path, method: :delete, class: 'navbar_link logout'  %></li>
+          <li class="navbar_item"><%= link_to t('views.common.home'), books_path, class: 'navbar_link home' %></li>
         <% end %>
       </ul>
 

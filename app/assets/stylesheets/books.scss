@@ -158,6 +158,10 @@ img {
 ////////////////////////////////////////
 */
 
+:root {
+  --light-orange: #ffdd22;
+}
+
 html {
   font-family: arial, sans-serif;
 }
@@ -182,12 +186,61 @@ body {
   overflow: hidden;
 }
 
-.main_title {
+.navbar_items {
+  display: flex;
+}
+
+.navbar_item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_items .email {
+  padding: 0 1em;
+  margin-right: 2px;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.navbar_link {
+  width: 120px;
+  text-align: center;
+  background-color: lightskyblue;
+  text-decoration: none;
+  color: white;
+  padding: 0.5em;
+  margin-right: 2px;
+}
+
+.navbar_link:hover {
+  background-color: cornflowerblue;
+}
+
+.title {
   text-align: center;
   color: #ffffff;
+}
+
+.main_title {
   font-size: 24px;
   font-weight: bold;
   padding: 1.5em;
+  background-color: cornflowerblue;
+}
+
+.small_title {
+  font-size: 18px;
+  padding: .8em;
+}
+
+.show_title, .users_title {
+  background-color: cornflowerblue;
+}
+
+.edit_title, .new_title {
+  color: #111;
+  font-size: 18px;
+  padding: .8em;
   background-color: cornflowerblue;
 }
 
@@ -221,20 +274,100 @@ body {
   text-align: center;
 }
 
+.show {
+  display: flex;
+  padding: 1em;
+}
+
+.show_picture {
+  width: 30%;
+}
+
+.show_items {
+  width: 70%;
+}
+
+.show_item {
+  padding-bottom: 1em;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_items {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+}
+
+.field {
+  display: flex;
+  min-height: 50px;
+  padding: 0.5em 0;
+}
+
+#book_memo {
+  min-height: 80px;
+}
+
+.field label {
+  width: 15%;
+  text-align: right;
+  padding: 0.4em 2em;
+}
+
+.field input, textarea {
+  width: 85%;
+}
+
 .actions {
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .btn {
   text-align: center;
   width: 200px;
-  background-color: orange;
   text-decoration: none;
-  color: white;
+  border: none;
   padding: 1em;
+  margin: 0 1em;
 }
 
-.btn:hover {
+.orange-btn {
+  background-color: orange;
+  color: white;
+}
+
+.orange-btn:hover {
+  background-color: var(--light-orange);
+}
+
+.blue-btn {
+  background-color: royalblue;
+  color: white;
+}
+
+.blue-btn:hover {
+  background-color: cornflowerblue;
+}
+
+.white-btn {
+  background-color: white;
+  color: inherit;
+  border: 1px solid #CCCCCC;
+}
+
+.white-btn:hover {
   background-color: #CCCCCC;
+  color: white;
+  border: 1px solid #CCCCCC;
+}
+
+.form-btn {
+  padding: 0.8em;
 }
