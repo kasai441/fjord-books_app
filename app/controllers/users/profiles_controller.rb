@@ -7,5 +7,7 @@ class Users::ProfilesController < ApplicationController
   end
 
   # GET /users/:id
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 end
