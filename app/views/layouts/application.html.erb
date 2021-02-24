@@ -19,16 +19,18 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
 
-      <p class="navbar-text pull-right">
+      <ul class="navbar-items">
         <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+          <li class="navbar-item"><strong><%= current_user.email %></strong></li>
+          <li class="navbar-item"><%= link_to t('views.users.edit'), edit_user_registration_path, class: 'navbar-link' %></li>
+          <li class="navbar-item"><%= link_to t('views.users.index'), users_path, class: 'navbar-link' %></li>
+          <li class="navbar-item"><%= link_to t('views.users.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %></li>
+          <li class="navbar-item"><%= link_to t('views.common.home'), books_path, class: 'navbar-link' %></li>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
+          <li class="navbar-item"><%= link_to t('views.users.signup'), new_user_registration_path, class: 'navbar-link'  %> |</li>
+          <li class="navbar-item"><%= link_to t('views.users.login'), new_user_session_path, class: 'navbar-link'  %></li>
         <% end %>
-      </p>
+      </ul>
 
       <%= yield %>
     </div>

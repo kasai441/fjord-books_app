@@ -215,6 +215,7 @@ en:
     pm: pm
   views:
     common:
+      home: Home
       show: Show
       edit: Edit
       destroy: Destroy
@@ -223,6 +224,18 @@ en:
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
       title_edit: "Editing %{name}"
+    pagination:
+      first: First
+      last: Last
+      previous: Previous
+      next: Next
+      truncate: '...'
+    users:
+      index: "All Users"
+      edit: "Edit Profile"
+      login: "Log In"
+      logout: "Log Out"
+      signup: "Sign Up"
   controllers:
     common:
       notice_create: "%{name} was successfully created."
