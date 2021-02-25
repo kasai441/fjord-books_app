@@ -33,6 +33,14 @@ Book.create!(
   picture: picture_file('erd.jpg')
 )
 
+User.create!(
+  email: 'test@mail.com',
+  password: 'password',
+  password_confirmation: 'password',
+  zipcode: '123-4567',
+  location: 'マンボウ区エビ1-2-3 プランクトン456',
+  bio: 'わたしは　かなり　おおきな　さかな　です'
+)
 50.times do
   Book.create!(
     title: Faker::Book.title,
