@@ -1,4 +1,4 @@
-<h1 class="title main_title"><%= Book.model_name.human %></h1>
+<h2 class="title books_title"><%= t('views.common.index') %></h2>
 <table class="main_table">
   <thead>
     <tr>
@@ -25,6 +25,3 @@
   </tbody>
 </table>
 <div class="pagination"><%= paginate @books %></div>
-<div class="actions">
-  <%= link_to t('views.common.new'), new_book_path, { class: "btn orange-btn" } %>
-</div>
