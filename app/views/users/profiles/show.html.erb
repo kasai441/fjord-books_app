@@ -1,23 +1,33 @@
-<p>
-  <strong><%= User.human_attribute_name(:email) %>:</strong>
-  <%= @user.email %>
-</p>
+<h2 class="title user_show_title">
+  <%= t('views.users.show') %>
+</h2>
 
-<p>
-  <strong><%= User.human_attribute_name(:zipcode) %>:</strong>
-  <%= @user.zipcode %>
-</p>
+<div class="show">
+  <p class="show_picture">
+  </p>
 
-<p>
-  <strong><%= User.human_attribute_name(:location) %>:</strong>
-  <%= @user.location %>
-</p>
-
-<p>
-  <strong><%= User.human_attribute_name(:bio) %>:</strong>
-  <%= @user.bio %>
-
-</p>
-
-<%= link_to t('views.common.edit'), edit_user_registration_path %> |
-<%= link_to t('views.common.back'), users_path %>
+  <ul class="show_items">
+    <li class="show_item">
+      <div class="show_item__label"><%= User.human_attribute_name(:email) %></div>
+      <div class="show_item__content"><%= @user.email %></div>
+    </li>
+    <li class="show_item">
+      <div class="show_item__label"><%= User.human_attribute_name(:zipcode) %></div>
+      <div class="show_item__content"><%= @user.zipcode %></div>
+    </li>
+    <li class="show_item">
+      <div class="show_item__label"><%= User.human_attribute_name(:location) %></div>
+      <div class="show_item__content"><%= @user.location %></div>
+    </li>
+    <li class="show_item">
+      <div class="show_item__label"><%= User.human_attribute_name(:bio) %></div>
+      <div class="show_item__content"><%= @user.bio %></div>
+    </li>
+  </ul>
+</div>
+<div class="actions">
+  <%= link_to t('views.common.back'), users_path, class: "btn white_btn" %>
+  <% if current_user == @user %>
+    <%= link_to t('views.common.edit'), edit_user_registration_path, class: "btn orange_btn" %>
+  <% end %>
+</div>

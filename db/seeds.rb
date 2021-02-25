@@ -40,7 +40,7 @@ User.create!(
   password_confirmation: 'password',
   zipcode: '123-4567',
   location: 'マンボウ区エビ1-2-3 プランクトン456',
-  bio: 'わたしは　さかな　です'
+  bio: 'わたしは　かなり　おおきな　さかな　です'
 )
 
 50.times do

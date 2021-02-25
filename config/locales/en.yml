@@ -215,11 +215,11 @@ en:
     pm: pm
   views:
     common:
-      home: Home
+      index: "Books List"
       show: Show
       edit: Edit
       destroy: Destroy
-      new: "New record"
+      new: "New book"
       back: Back
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
@@ -232,6 +232,7 @@ en:
       truncate: '...'
     users:
       index: "All Users"
+      show: "Profile"
       edit: "Edit Profile"
       login: "Log In"
       logout: "Log Out"

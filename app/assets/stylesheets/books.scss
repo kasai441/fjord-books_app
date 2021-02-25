@@ -159,7 +159,23 @@ img {
 */
 
 :root {
-  --light-orange: #ffdd22;
+  --light_orange: #ffde9a;
+  --light_red: #fa7e7e;
+  --books: cornflowerblue;
+  --books_h: #78A6F8;
+  --users: orange;
+  --users_h: #ffde9a;
+  --book_new: #81bef5;
+  --book_new_h: #93d2f3;
+  --user_new: cornflowerblue;
+  --book_show: cornflowerblue;
+  --user_show: #ffbb3b;
+  --user_show_h: #fde3b2;
+  --book_edit: cornflowerblue;
+  --user_edit: #ffbb3b;
+  --session_new: cornflowerblue;
+  --logout: gray;
+  --logout_h: #DDDDDD;
 }
 
 html {
@@ -195,53 +211,109 @@ body {
   align-items: center;
 }
 
-.navbar_items .email {
-  padding: 0 1em;
-  margin-right: 2px;
-  background-color: cornflowerblue;
-  color: white;
+.navbar_items .dummy {
+  flex-grow: 1;
 }
 
 .navbar_link {
   width: 120px;
   text-align: center;
-  background-color: lightskyblue;
   text-decoration: none;
   color: white;
   padding: 0.5em;
   margin-right: 2px;
 }
 
-.navbar_link:hover {
-  background-color: cornflowerblue;
+.books .navbar_link {
+  background-color: var(--books);
+}
+
+.books .navbar_link:hover {
+  background-color: var(--books_h);
+}
+
+.new .navbar_link {
+  background-color: var(--book_new);
+}
+
+.new .navbar_link:hover {
+  background-color: var(--book_new_h);
+}
+
+.dummy .navbar_link {
+  background-color: transparent;
+}
+
+.users .navbar_link {
+  background-color: var(--users);
+}
+
+.users .navbar_link:hover {
+  background-color: var(--users_h);
+}
+
+.email .navbar_link {
+  background-color: var(--user_show);
+  width: auto;
+}
+
+.email .navbar_link:hover {
+  background-color: var(--user_show_h);
+}
+
+.logout .navbar_link {
+  background-color: white;
+  color: var(--logout);
+  border: 1px solid var(--logout);
+  border-bottom: none;
+}
+
+.logout .navbar_link:hover {
+  background-color: var(--logout_h);
 }
 
 .title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 1em;
   text-align: center;
   color: #ffffff;
 }
 
-.main_title {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 1.5em;
-  background-color: cornflowerblue;
+.books_title {
+  background-color: var(--books);
 }
 
-.small_title {
-  font-size: 18px;
-  padding: .8em;
+.users_title {
+  background-color: var(--users);
 }
 
-.show_title, .users_title {
-  background-color: cornflowerblue;
+.book_new_title {
+  background-color: var(--book_new);
 }
 
-.edit_title, .new_title {
-  color: #111;
-  font-size: 18px;
-  padding: .8em;
-  background-color: cornflowerblue;
+.user_new_title {
+  background-color: var(--user_new);
+}
+
+.session_new_title {
+  background-color: var(--session_new);
+}
+
+.book_show_title {
+  background-color: var(--book_show);
+}
+
+.user_show_title {
+  background-color: var(--user_show);
+}
+
+.book_edit_title {
+  background-color: var(--book_edit);
+}
+
+.user_edit_title {
+  background-color: var(--user_edit);
 }
 
 .main_table {
@@ -277,6 +349,7 @@ body {
 .show {
   display: flex;
   padding: 1em;
+  flex-wrap: wrap;
 }
 
 .show_picture {
@@ -285,10 +358,24 @@ body {
 
 .show_items {
   width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .show_item {
   padding-bottom: 1em;
+  display: flex;
+}
+
+.show_item__label{
+  width: 15%;
+  text-align: right;
+  padding-right: 1em;
+  font-weight: bold;
+}
+
+.show_item__content {
+  width: 85%;
 }
 
 .form_container {
@@ -312,14 +399,35 @@ body {
   min-height: 80px;
 }
 
-.field label {
-  width: 15%;
+.form_items__label {
+  font-weight: bold;
+  width: 20%;
   text-align: right;
   padding: 0.4em 2em;
+  display: flex;
+  flex-direction: column;
 }
 
-.field input, textarea {
-  width: 85%;
+.form_items__content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.field i {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form_items__footnote {
+  text-align: right;
+}
+
+.rememberme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1em;
 }
 
 .actions {
@@ -327,6 +435,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .btn {
@@ -338,36 +447,46 @@ body {
   margin: 0 1em;
 }
 
-.orange-btn {
+.orange_btn {
   background-color: orange;
   color: white;
 }
 
-.orange-btn:hover {
-  background-color: var(--light-orange);
+.orange_btn:hover {
+  background-color: var(--light_orange);
 }
 
-.blue-btn {
+.blue_btn {
   background-color: royalblue;
   color: white;
 }
 
-.blue-btn:hover {
+.blue_btn:hover {
   background-color: cornflowerblue;
 }
 
-.white-btn {
+.white_btn {
   background-color: white;
   color: inherit;
   border: 1px solid #CCCCCC;
 }
 
-.white-btn:hover {
+.white_btn:hover {
   background-color: #CCCCCC;
   color: white;
   border: 1px solid #CCCCCC;
 }
 
-.form-btn {
+.form_btn {
   padding: 0.8em;
+}
+
+.red_btn {
+  padding: 0.8em;
+  background-color: indianred;
+  color: white;
+}
+
+.red_btn:hover {
+  background-color: var(--light_red);
 }

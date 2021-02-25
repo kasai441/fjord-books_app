@@ -207,11 +207,11 @@ ja:
     pm: 午後
   views:
     common:
-      home: ホーム
+      index: 本のリスト
       show: 詳細
       edit: 編集
       destroy: 削除
-      new: 新規作成
+      new: 本の追加
       back: 戻る
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
@@ -224,6 +224,7 @@ ja:
       truncate: '...'
     users:
       index: ユーザーリスト
+      show: プロフィール
       edit: プロフィール編集
       login: ログイン
       logout: ログアウト

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title small_title users_title"><%= User.model_name.human %></h1>
+<h2 class="title users_title"><%= t('views.users.index') %></h2>
 <table class="main_table">
   <thead>
     <tr>
@@ -20,8 +20,10 @@
         <td><%= user.location %></td>
         <td><%= user.bio %></td>
         <td class="nowrap"><%= link_to t('views.common.show'), user %></td>
-        <td class="nowrap"><%= link_to t('views.common.edit'), edit_user_registration_path %></td>
-        <td class="nowrap"><%= link_to t('views.common.destroy'), user_registration_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+        <% if current_user == user %>
+          <td class="nowrap"><%= link_to t('views.common.edit'), edit_user_registration_path %></td>
+          <td class="nowrap"><%= link_to t('views.common.destroy'), user_registration_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>

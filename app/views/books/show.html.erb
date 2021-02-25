@@ -1,9 +1,8 @@
-<h1 class="title small_title show_title">
+<h2 class="title book_show_title">
   <%= @book.title %>
-</h1>
+</h2>
 
 <div class="show">
-
   <p class="show_picture">
     <%= image_tag(@book.picture_url) if @book.picture.present? %>
   </p>
@@ -17,9 +16,8 @@
       <%= @book.author %>
     </li>
   </ul>
-
 </div>
 <div class="actions">
-  <%= link_to t('views.common.edit'), edit_book_path(@book), { class: "btn orange-btn" } %>
-  <%= link_to t('views.common.back'), books_path, { class: "btn white-btn" } %>
+  <%= link_to t('views.common.back'), books_path, class: "btn white_btn" %>
+  <%= link_to t('views.common.edit'), edit_book_path(@book), class: "btn orange_btn" %>
 </div>
