@@ -35,7 +35,7 @@ Book.create!(
 )
 
 User.create!(
-  email: 'kasai441441@gmail.com',
+  email: 'test@mail.com',
   password: 'password',
   password_confirmation: 'password',
   zipcode: '123-4567',
