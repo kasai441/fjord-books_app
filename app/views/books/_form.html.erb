@@ -22,24 +22,20 @@
         <%= form.label :memo, class: 'form_items__label' %>
         <%= form.text_area :memo, class: 'form_items__content' %>
       </li>
-
       <li class="field">
         <%= form.label :author, class: 'form_items__label' %>
         <%= form.text_field :author, class: 'form_items__content' %>
       </li>
-
       <li class="field">
         <%= form.label :picture, class: 'form_items__label' %>
         <%= form.file_field :picture, class: 'form_items__content' %>
       </li>
-
     </ul>
 
     <div class="actions">
       <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
       <%= form.submit t('helpers.submit.update'), :class => "btn orange_btn form_btn" %>
     </div>
-
   <% end %>
 
 </div>
