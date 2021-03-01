@@ -33,14 +33,6 @@ Book.create!(
   picture: picture_file('erd.jpg')
 )
 
-User.create!(
-  email: 'test@mail.com',
-  password: 'password',
-  password_confirmation: 'password',
-  postal_code: '123-4567',
-  address: 'マンボウ区エビ1-2-3 プランクトン456',
-  self_introduciton: 'わたしは　かなり　おおきな　さかな　です'
-)
 50.times do
   Book.create!(
     title: Faker::Book.title,
@@ -58,7 +50,7 @@ User.create!(
   name: 'test',
   postal_code: '123-4567',
   address: 'マンボウ区エビ1-2-3 プランクトン456',
-  self_introduciton: 'わたしは　おおくて　めだつ　さかな　です'
+  self_introduction: 'わたしは　すいぞくかんで　めだつ　さかな　です'
 )
 
 50.times do |n|
