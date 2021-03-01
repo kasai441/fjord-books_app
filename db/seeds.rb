@@ -37,9 +37,9 @@ User.create!(
   email: 'test@mail.com',
   password: 'password',
   password_confirmation: 'password',
-  zipcode: '123-4567',
-  location: 'マンボウ区エビ1-2-3 プランクトン456',
-  bio: 'わたしは　かなり　おおきな　さかな　です'
+  postal_code: '123-4567',
+  address: 'マンボウ区エビ1-2-3 プランクトン456',
+  self_introduciton: 'わたしは　かなり　おおきな　さかな　です'
 )
 50.times do
   Book.create!(
