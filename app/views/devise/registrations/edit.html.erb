@@ -61,9 +61,13 @@
     <div class="actions">
       <%= link_to t('devise.shared.links.back'), :back, class: "btn white_btn" %>
       <%= f.submit t('.update'), class: "btn orange_btn form_btn" %>
-      <h3 hidden><%= t('.cancel_my_account') %></h3>
-      <p hidden><%= t('.unhappy') %></p>
-      <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn red_btn" %>
     </div>
   <% end %>
+
+  <div class="actions">
+    <h3 hidden><%= t('.cancel_my_account') %></h3>
+    <p hidden><%= t('.unhappy') %></p>
+    <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn red_btn" %>
+  </div>
+
 </div>

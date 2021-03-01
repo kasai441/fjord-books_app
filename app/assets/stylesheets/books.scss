@@ -391,6 +391,32 @@ body {
   padding: 0.5em 0;
 }
 
+
+.field i {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.field_with_errors {
+  color: red;
+  display: flex;
+  width: 80%;
+}
+
+.field_with_errors :not(.form_items__label) {
+  width: 100%;
+  display: flex;
+}
+
+#error_explanation {
+  color: red;
+  background-color: lightpink;
+  padding: 0.8em;
+  margin-top: 1em;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
 #book_memo {
   min-height: 80px;
 }
@@ -408,11 +434,6 @@ body {
   width: 80%;
   display: flex;
   flex-direction: column;
-}
-
-.field i {
-  font-weight: normal;
-  font-style: italic;
 }
 
 .form_items__footnote {
