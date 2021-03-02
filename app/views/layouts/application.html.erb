@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <ul class="navbar_items">
+        <% if user_signed_in? %>
+          <li class="navbar_item books"><%= link_to t('views.common.index') , books_path, class: 'navbar_link' %></li>
+          <li class="navbar_item new"><%= link_to t('views.common.new'), new_book_path, class: 'navbar_link' %></li>
+          <li class="navbar_item dummy"><a class="navbar_link"></a></li>
+          <li class="navbar_item users"><%= link_to t('views.users.index'), users_path, class: 'navbar_link' %></li>
+          <li class="navbar_item email"><%= link_to current_user.email, current_user, class: 'navbar_link' %></li>
+          <li class="navbar_item logout"><%= link_to t('views.users.logout'), destroy_user_session_path, method: :delete, class: 'navbar_link'  %></li>
+        <% end %>
+      </ul>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

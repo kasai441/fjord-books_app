@@ -1,8 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= Book.model_name.human %></h1>
-
-<table>
+<h2 class="title books_title"><%= t('views.common.index') %></h2>
+<table class="main_table">
   <thead>
     <tr>
       <th><%= Book.human_attribute_name(:title) %></th>
@@ -20,16 +17,12 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to t('views.common.show'), book %></td>
-        <td><%= link_to t('views.common.edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('views.common.destroy'), book, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+        <td class="nowrap"><%= link_to t('views.common.show'), book %></td>
+        <td class="nowrap"><%= link_to t('views.common.edit'), edit_book_path(book) %></td>
+        <td class="nowrap"><%= link_to t('views.common.destroy'), book, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= paginate @books %>
-
-<br>
-
-<%= link_to t('views.common.new'), new_book_path %>
+<div class="pagination"><%= paginate @books %></div>

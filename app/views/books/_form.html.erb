@@ -1,37 +1,41 @@
-<%= form_with(model: book, local: true) do |form| %>
-  <% if book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<div class="form_container">
 
-      <ul>
-        <% book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: book, local: true) do |form| %>
+    <% if book.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+        <ul>
+          <% book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <ul class="form_items">
+      <li class="field">
+        <%= form.label :title, class: 'form_items__label' %>
+        <%= form.text_field :title, class: 'form_items__content' %>
+      </li>
+      <li class="field">
+        <%= form.label :memo, class: 'form_items__label' %>
+        <%= form.text_area :memo, class: 'form_items__content' %>
+      </li>
+      <li class="field">
+        <%= form.label :author, class: 'form_items__label' %>
+        <%= form.text_field :author, class: 'form_items__content' %>
+      </li>
+      <li class="field">
+        <%= form.label :picture, class: 'form_items__label' %>
+        <%= form.file_field :picture, class: 'form_items__content' %>
+      </li>
+    </ul>
+
+    <div class="actions">
+      <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
+      <%= form.submit t('helpers.submit.update'), :class => "btn orange_btn form_btn" %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
