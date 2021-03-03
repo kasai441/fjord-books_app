@@ -41,6 +41,7 @@ group :development do
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
   gem 'omniauth', '~> 1.9.1'
+  gem 'omniauth-github'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
