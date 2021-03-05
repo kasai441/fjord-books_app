@@ -50,7 +50,8 @@ User.create!(
   name: 'test',
   postal_code: '123-4567',
   address: 'マンボウ区エビ1-2-3 プランクトン456',
-  self_introduction: 'わたしは　すいぞくかんで　めだつ　さかな　です'
+  self_introduction: 'わたしは　すいぞくかんで　めだつ　さかな　です',
+  uid: SecureRandom.uuid
 )
 
 50.times do |n|
@@ -61,7 +62,8 @@ User.create!(
     name: name,
     postal_code: "123-#{n.to_s.rjust(4, '0')}",
     address: Faker::Address.full_address,
-    self_introduction: "こんにちは、#{name}です。"
+    self_introduction: "こんにちは、#{name}です。",
+    uid: SecureRandom.uuid
   )
 end
 

@@ -5,14 +5,14 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="form_items">
+    <ul class="form_items">
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <li><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></li>
       <% end %>
 
       <%= render 'devise/registrations/profile_fields', f: f %>
-
+      <% if @user.attributes['provider'] != 'github' %>
       <li class="field">
         <ul class="form_items__label">
           <%= f.label :password %>
@@ -27,7 +27,9 @@
       </div>
 
       <li class="field">
-        <%= f.label :password_confirmation, class: 'form_items__label' %>
+        <ul class="form_items__label">
+          <%= f.label :password_confirmation %>
+        </ul>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form_items__content' %>
       </li>
 
@@ -38,9 +40,10 @@
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form_items__content' %>
       </li>
       <div class="form_items__footnote">
-        <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i>
+        <i>(<%= t('views.registrations.password_change_needs_current_password') %>)</i>
       </div>
-    </div>
+      <% end %>
+    </ul>
 
     <div class="actions">
       <%= link_to t('devise.shared.links.back'), :back, class: "btn white_btn" %>

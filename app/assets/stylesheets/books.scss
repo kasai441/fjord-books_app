@@ -397,12 +397,14 @@ body {
 }
 
 .field_with_errors {
+  text-align: right;
   color: red;
   display: flex;
   width: 80%;
 }
 
 .field_with_errors :not(.form_items__label) {
+  text-align: right;
   width: 100%;
   display: flex;
 }
