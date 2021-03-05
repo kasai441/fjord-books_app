@@ -232,6 +232,8 @@ ja:
       login: ログイン
       logout: ログアウト
       signup: アカウント登録
+    registrations:
+      password_change_needs_current_password: パスワードの変更には現在のパスワード入力が必要です
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

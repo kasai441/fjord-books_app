@@ -41,7 +41,7 @@ group :development do
   gem 'i18n_generators'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
-  gem 'omniauth', '~> 1.9.1'
+  gem 'omniauth'
   gem 'omniauth-github'
   gem 'omniauth-rails_csrf_protection'
   gem 'rack-mini-profiler', '~> 2.0'
