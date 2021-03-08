@@ -14,34 +14,41 @@
       <%= render 'devise/registrations/profile_fields', f: f %>
       <% if @user.attributes['provider'] != 'github' %>
       <li class="field">
-        <ul class="form_items__label">
+        <div class="form_items__label">
           <%= f.label :password %>
           <% if @minimum_password_length %>
             <i><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></i>
           <% end %>
-        </ul>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form_items__content" %>
+        </div>
+        <div class="form_items__content">
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
       </li>
       <div class="form_items__footnote">
         <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
       </div>
 
       <li class="field">
-        <ul class="form_items__label">
+        <div class="form_items__label">
           <%= f.label :password_confirmation %>
-        </ul>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form_items__content' %>
+        </div>
+        <div class="form_items__content">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
       </li>
 
       <li class="field">
-        <ul class="form_items__label">
+        <div class="form_items__label">
           <%= f.label :current_password %>
-        </ul>
-        <%= f.password_field :current_password, autocomplete: "current-password", class: 'form_items__content' %>
+        </div>
+        <div class="form_items__content">
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
       </li>
-      <div class="form_items__footnote">
+
+      <li class="form_items__footnote">
         <i>(<%= t('views.registrations.password_change_needs_current_password') %>)</i>
-      </div>
+      </li>
       <% end %>
     </ul>
 
