@@ -202,6 +202,19 @@ body {
   overflow: hidden;
 }
 
+.alert {
+  padding: 0.2em;
+  border: none;
+}
+
+.alert-success {
+  color: green;
+}
+
+.alert-danger {
+  color: red;
+}
+
 .navbar_items {
   display: flex;
 }
