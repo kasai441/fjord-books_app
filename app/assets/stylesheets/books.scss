@@ -396,19 +396,6 @@ body {
   font-style: italic;
 }
 
-.field_with_errors {
-  text-align: right;
-  color: red;
-  display: flex;
-  width: 80%;
-}
-
-.field_with_errors :not(.form_items__label) {
-  text-align: right;
-  width: 100%;
-  display: flex;
-}
-
 #error_explanation {
   color: red;
   background-color: lightpink;
@@ -431,10 +418,23 @@ body {
   flex-direction: column;
 }
 
+.form_items__label .field_with_errors {
+  color: red;
+}
+
 .form_items__content {
   width: 80%;
   display: flex;
   flex-direction: column;
+}
+
+.form_items__content input {
+  flex: 1;
+}
+
+.form_items__content .field_with_errors {
+  flex: 1;
+  display: flex;
 }
 
 .form_items__footnote {
