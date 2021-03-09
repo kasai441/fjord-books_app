@@ -37,10 +37,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
+  gem 'omniauth'
+  gem 'omniauth-github'
+  gem 'omniauth-rails_csrf_protection'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
