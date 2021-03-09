@@ -2,6 +2,7 @@
 <table class="main_table">
   <thead>
   <tr>
+    <th class="nowrap"><%= User.human_attribute_name(:avatar) %></th>
     <th class="nowrap"><%= User.human_attribute_name(:email) %></th>
     <th class="nowrap"><%= User.human_attribute_name(:name) %></th>
     <th class="nowrap"><%= User.human_attribute_name(:postal_code) %></th>
@@ -13,6 +14,7 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
+      <td><%= image_tag user.avatar.variant(gravity: :center, resize:"50x50^", crop:"50x50+0+0").processed if user.avatar.attached? %></td>
       <td><%= user.email %></td>
       <td><%= user.name %></td>
       <td><%= user.postal_code %></td>

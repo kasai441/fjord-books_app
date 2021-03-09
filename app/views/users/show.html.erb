@@ -4,7 +4,7 @@
 
 <div class="show">
   <p class="show_picture">
-    <%= image_tag @user.avatar if @user.avatar.attached? %>
+    <%= image_tag @user.avatar.variant(gravity: :center, resize:"240x240^", crop:"240x240+0+0").processed if @user.avatar.attached? %>
   </p>
 
   <ul class="show_items">
