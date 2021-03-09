@@ -4,6 +4,7 @@
 
 <div class="show">
   <p class="show_picture">
+    <%= image_tag @user.avatar if @user.avatar.attached? %>
   </p>
 
   <ul class="show_items">

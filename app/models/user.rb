@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_one_attached :avatar
+
   validates :email, presence: true, uniqueness: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
 
