@@ -1,4 +1,4 @@
-<h2 class="title users_title"><%= @title %></h2>
+<h2 class="title users_title"><%= "#{@user.name} の #{@title}" %></h2>
 <table class="main_table">
   <thead>
   <tr>
@@ -30,3 +30,7 @@
 </table>
 
 <div class="pagination"><%= paginate @users %></div>
+
+<div class="actions">
+  <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
+</div>
