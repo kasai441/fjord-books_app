@@ -363,6 +363,8 @@ body {
 
 .show_picture {
   width: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
 .show_items {
@@ -520,4 +522,27 @@ body {
 
 .red_btn:hover {
   background-color: var(--light_red);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  a {
+    padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: flex;
+  }
 }

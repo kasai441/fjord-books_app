@@ -1,4 +1,4 @@
-<h2 class="title users_title"><%= t('views.users.index') %></h2>
+<h2 class="title users_title"><%= t('views.users.follows') %></h2>
 <table class="main_table">
   <thead>
   <tr>
@@ -7,6 +7,7 @@
     <th class="nowrap"><%= User.human_attribute_name(:name) %></th>
     <th class="nowrap"><%= User.human_attribute_name(:postal_code) %></th>
     <th class="nowrap"><%= User.human_attribute_name(:address) %></th>
+    <th class="nowrap"></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -19,6 +20,7 @@
       <td><%= user.name %></td>
       <td><%= user.postal_code %></td>
       <td><%= user.address %></td>
+      <td><%= render 'shared/stats' %></td>
       <td class="nowrap"><%= link_to t('views.common.show'), user %></td>
       <% if current_user == user %>
         <td class="nowrap"><%= link_to t('views.common.edit'), edit_user_registration_path %></td>

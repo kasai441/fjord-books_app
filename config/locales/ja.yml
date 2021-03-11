@@ -232,6 +232,7 @@ ja:
       login: ログイン
       logout: ログアウト
       signup: アカウント登録
+      follows: フォロー
     registrations:
       password_change_needs_current_password: パスワードの変更には現在のパスワード入力が必要です
   controllers:
