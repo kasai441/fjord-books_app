@@ -163,10 +163,14 @@ img {
   --light_red: #fa7e7e;
   --books: cornflowerblue;
   --books_h: #78A6F8;
+  --reports: green;
+  --reports_h: #15b315;
   --users: orange;
   --users_h: #ffde9a;
   --book_new: #81bef5;
   --book_new_h: #93d2f3;
+  --report_new: #31a531;
+  --report_new_h: #4bc64b;
   --user_new: cornflowerblue;
   --book_show: cornflowerblue;
   --user_show: #ffbb3b;
@@ -245,12 +249,28 @@ body {
   background-color: var(--books_h);
 }
 
-.new .navbar_link {
+.new_book .navbar_link {
   background-color: var(--book_new);
 }
 
-.new .navbar_link:hover {
+.new_book .navbar_link:hover {
   background-color: var(--book_new_h);
+}
+
+.reports .navbar_link {
+  background-color: var(--reports);
+}
+
+.reports .navbar_link:hover {
+  background-color: var(--reports_h);
+}
+
+.new_report .navbar_link {
+  background-color: var(--report_new);
+}
+
+.new_report .navbar_link:hover {
+  background-color: var(--report_new_h);
 }
 
 .dummy .navbar_link {
@@ -297,12 +317,20 @@ body {
   background-color: var(--books);
 }
 
+.reports_title {
+  background-color: var(--reports);
+}
+
 .users_title {
   background-color: var(--users);
 }
 
 .book_new_title {
   background-color: var(--book_new);
+}
+
+.report_new_title {
+  background-color: var(--report_new);
 }
 
 .user_new_title {
@@ -337,6 +365,10 @@ body {
   padding: 1em;
   border-bottom: 1.4px solid #CCCCCC;
   font-size: 1.1em;
+}
+
+.main_table .reports_table_header {
+  text-align: left;
 }
 
 .main_table td {

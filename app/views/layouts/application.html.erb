@@ -22,7 +22,9 @@
       <ul class="navbar_items">
         <% if user_signed_in? %>
           <li class="navbar_item books"><%= link_to t('views.common.index') , books_path, class: 'navbar_link' %></li>
-          <li class="navbar_item new"><%= link_to t('views.common.new'), new_book_path, class: 'navbar_link' %></li>
+          <li class="navbar_item new_book"><%= link_to t('views.common.new'), new_book_path, class: 'navbar_link' %></li>
+          <li class="navbar_item reports"><%= link_to t('views.common.index_report') , reports_path, class: 'navbar_link' %></li>
+          <li class="navbar_item new_report"><%= link_to t('views.common.new_report'), new_report_path, class: 'navbar_link' %></li>
           <li class="navbar_item dummy"><a class="navbar_link"></a></li>
           <li class="navbar_item users"><%= link_to t('views.users.index'), users_path, class: 'navbar_link' %></li>
           <li class="navbar_item email"><%= link_to current_user.email, current_user, class: 'navbar_link' %></li>
