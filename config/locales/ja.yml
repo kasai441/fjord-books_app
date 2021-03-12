@@ -208,13 +208,10 @@ ja:
   views:
     common:
       index: 本のリスト
-      index_report: 日報のリスト
       show: 詳細
-      reporter: 作成者
       edit: 編集
       destroy: 削除
       new: 本の追加
-      new_report: 日報の追加
       back: 戻る
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
@@ -222,6 +219,11 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+    reports:
+      index: 日報のリスト
+      new: 日報の追加
+      reporter: 作成者
+      last_update: "最終更新 by %{user_name}"
     pagination:
       first: '最初'
       last: '最後'

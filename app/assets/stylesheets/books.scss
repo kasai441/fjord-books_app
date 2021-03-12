@@ -234,7 +234,8 @@ body {
 }
 
 .navbar_link {
-  width: 120px;
+  white-space: nowrap;
+  width: 100px;
   text-align: center;
   text-decoration: none;
   color: white;
@@ -410,9 +411,34 @@ body {
   flex-direction: column;
 }
 
+.show_picture_report {
+  width: 15%;
+}
+
+.show_items_report {
+  width: 85%;
+}
+
 .show_item {
   padding-bottom: 1em;
   display: flex;
+}
+
+.show_item__gray {
+  color: gray;
+}
+
+.show_item__textarea {
+  min-height: 200px;
+  background-color: darkseagreen;
+  border: 1px solid darkseagreen;
+  border-radius: 10px;
+  color: white;
+}
+
+.show_item_report {
+  justify-content: flex-end;
+  padding-right: 1em
 }
 
 .show_item__label{

@@ -3,16 +3,18 @@
 </h2>
 
 <div class="show">
-  <p class="show_picture">
-  </p>
+  <div class="show_picture show_picture_report">
+    <div class="show_item show_item_report">
+      <%= image_tag @report.user.avatar.variant(gravity: :center, resize:"60x60^", crop:"60x60+0+0").processed if @report.user.avatar.attached? %>
+    </div>
+  </div>
 
-  <ul class="show_items">
-    <li class="show_item">
-      <%= @report.content %>
+  <ul class="show_items show_items_report">
+    <li class="show_item show_item__gray">
+      <%= t('views.reports.last_update', user_name: @report.user.name) %>
     </li>
-    <li class="show_item">
-      <strong><%= t('views.common.reporter') %>:</strong>
-      <%= User.find(@report.user_id).name %>
+    <li class="show_item show_item__textarea">
+      <%= @report.content %>
     </li>
   </ul>
 </div>
