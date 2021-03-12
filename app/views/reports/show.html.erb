@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<h2 class="title report_show_title">
   <%= @report.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Content:</strong>
-  <%= @report.content %>
-</p>
+<div class="show">
+  <p class="show_picture">
+  </p>
 
-<%= link_to 'Edit', edit_report_path(@report) %> |
-<%= link_to 'Back', reports_path %>
+  <ul class="show_items">
+    <li class="show_item">
+      <%= @report.content %>
+    </li>
+    <li class="show_item">
+      <strong><%= t('views.common.reporter') %>:</strong>
+      <%= User.find(@report.user_id).name %>
+    </li>
+  </ul>
+</div>
+<div class="actions">
+  <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report), class: "btn orange_btn" %>
+</div>

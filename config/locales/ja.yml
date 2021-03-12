@@ -210,6 +210,7 @@ ja:
       index: 本のリスト
       index_report: 日報のリスト
       show: 詳細
+      reporter: 作成者
       edit: 編集
       destroy: 削除
       new: 本の追加

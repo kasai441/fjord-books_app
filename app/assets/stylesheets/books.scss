@@ -173,6 +173,7 @@ img {
   --report_new_h: #4bc64b;
   --user_new: cornflowerblue;
   --book_show: cornflowerblue;
+  --report_show: green;
   --user_show: #ffbb3b;
   --user_show_h: #fde3b2;
   --book_edit: cornflowerblue;
@@ -343,6 +344,10 @@ body {
 
 .book_show_title {
   background-color: var(--book_show);
+}
+
+.report_show_title {
+  background-color: var(--report_show);
 }
 
 .user_show_title {
