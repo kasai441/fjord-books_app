@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
-  validates :uid, presence: true, uniqueness: { scope: :provider }
+  validates :uid, presence: true, uniqueness: { scope: :provider }, allow_nil: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -18,10 +18,6 @@ class User < ApplicationRecord
     end
   end
 
-  def self.create_unique_string
-    SecureRandom.uuid
-  end
-
   def self.new_with_session(params, session)
     super.tap do |user|
       if (data = session['devise.github_data']) && session['devise.github_data']['info'] && user.email.blank?
@@ -29,4 +25,5 @@ class User < ApplicationRecord
       end
     end
   end
+
 end
