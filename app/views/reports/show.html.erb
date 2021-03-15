@@ -20,5 +20,7 @@
 </div>
 <div class="actions">
   <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
-  <%= link_to t('views.common.edit'), edit_report_path(@report), class: "btn orange_btn" %>
+  <% if @report.user == current_user %>
+    <%= link_to t('views.common.edit'), edit_report_path(@report), class: "btn orange_btn" %>
+  <% end %>
 </div>
