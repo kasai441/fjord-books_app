@@ -3,8 +3,9 @@
 <table class="main_table">
   <thead>
   <tr>
-    <th class="reports_table_header"><%= Report.human_attribute_name(:title) %></th>
+    <th class="reports_table_header reports_table__avatar"></th>
     <th class="reports_table_header"><%= t('views.reports.reporter') %></th>
+    <th class="reports_table_header"><%= Report.human_attribute_name(:title) %></th>
     <th class="reports_table_header"><%= Report.human_attribute_name(:created_at) %></th>
     <th colspan="3"></th>
   </tr>
@@ -13,8 +14,11 @@
   <tbody>
   <% @reports.each do |report| %>
     <tr>
+      <td class="reports_table__avatar">
+        <%= image_tag report.user.avatar.variant(gravity: :center, resize_to_fill: [30, 30], crop:"30x30+0+0").processed if report.user.avatar.attached? %>
+      </td>
+      <td><%= report.user.name %></td>
       <td><%= report.title %></td>
-      <td><%= User.find(report.user_id).name %></td>
       <td><%= l report.created_at, format: :long %></td>
       <td class="nowrap"><%= link_to t('views.common.show'), report %></td>
       <% if current_user == @user %>
