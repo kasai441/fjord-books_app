@@ -14,7 +14,7 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <td><%= image_tag user.avatar.variant(gravity: :center, resize:"30x30^", crop:"30x30+0+0").processed if user.avatar.attached? %></td>
+      <td><%= image_tag user.avatar.variant(gravity: :center, resize_to_fill: [30, 30], crop:"30x30+0+0").processed if user.avatar.attached? %></td>
       <td><%= user.email %></td>
       <td><%= user.name %></td>
       <td><%= user.postal_code %></td>
