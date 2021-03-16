@@ -177,6 +177,7 @@ img {
   --user_show: #ffbb3b;
   --user_show_h: #fde3b2;
   --book_edit: var(--books);
+  --report_edit: var(--reports);
   --user_edit: var(--user_show);
   --session_new: var(--books);
   --logout: gray;
@@ -357,6 +358,10 @@ body {
 
 .book_edit_title {
   background-color: var(--book_edit);
+}
+
+.report_edit_title {
+  background-color: var(--report_edit);
 }
 
 .user_edit_title {
