@@ -11,7 +11,7 @@
 
   <ul class="show_items show_items__report">
     <li class="show_item show_item__gray">
-      <%= t('views.reports.last_update', user_name: @report.user.name) %>
+      <%= t('views.reports.created_by', date: l(@report.created_at, format: :long), name: @report.user.name) %>
     </li>
     <li class="show_item show_item__textarea">
       <%= simple_format(@report.content, class: "show_item__paragraph") %>
@@ -24,3 +24,5 @@
     <%= link_to t('views.common.edit'), edit_report_path(@report), class: "btn orange_btn" %>
   <% end %>
 </div>
+
+<%= render 'comments/show', report: @report %>

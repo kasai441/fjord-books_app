@@ -1,0 +1,46 @@
+<div class="show">
+
+  <h3 class="title comment_show_title">
+    <p>
+      <%= Comment.model_name.human %>
+    </p>
+  </h3>
+  <% @report.comments.each do |comment| %>
+
+    <div class="show_picture show_picture__report">
+      <div class="show_item show_item__report">
+        <%= image_tag comment.user.avatar.variant(gravity: :center, resize_to_fill: [60, 60], crop:"60x60+0+0").processed if comment.user.avatar.attached? %>
+      </div>
+    </div>
+
+    <ul class="show_items show_items__report">
+      <li class="show_item__comment_head">
+        <div class="show_item">
+          <%= comment.user.name %>
+        </div>
+        <div class="show_item show_item__dummy">
+        </div>
+        <div class="show_item show_item__gray">
+          <%= t('views.reports.created_at', date: l(comment.created_at, format: :long) ) %>
+        </div>
+      </li>
+      <li class="show_item show_item__textarea show_item__comment">
+        <%= simple_format(comment.content, class: "show_item__paragraph") %>
+      </li>
+    </ul>
+
+    <div class="actions">
+      <% if comment.writable.user == current_user %>
+        <%= link_to t('views.common.edit'), edit_report_comment_path(@report), class: "btn orange_btn" %>
+        <%#= link_to 'Destroy', report_comment_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+      <% end %>
+    </div>
+
+<% end %>
+
+</div>
+
+
+<div class="actions">
+  <%= link_to t('views.common.title_new', name: Comment.model_name.human), new_report_comment_path(@report), class: "btn orange_btn" %>
+</div>

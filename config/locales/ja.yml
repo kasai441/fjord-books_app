@@ -219,7 +219,8 @@ ja:
       minimum_length: "%{length}文字以上"
     reports:
       reporter: 作成者
-      last_update: "最終更新 by %{user_name}"
+      created_by: "更新 %{date} by %{name}"
+      created_at: "更新 %{date}"
     pagination:
       first: '最初'
       last: '最後'
