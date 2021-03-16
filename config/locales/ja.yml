@@ -207,21 +207,17 @@ ja:
     pm: 午後
   views:
     common:
-      index: 本のリスト
-      show: 詳細
-      edit: 編集
-      destroy: 削除
-      new: 本の追加
-      back: 戻る
-      delete_confirm: よろしいですか？
-      title_new: "%{name}の新規作成"
+      title_index: "%{name}のリスト"
+      title_new: "%{name}の追加"
       title_edit: "%{name}の編集"
       title_show: "%{name}の詳細"
-      sign_out: ログアウト
+      edit: 編集
+      show: 詳細
+      back: 戻る
+      destroy: 削除
+      delete_confirm: よろしいですか？
       minimum_length: "%{length}文字以上"
     reports:
-      index: 日報のリスト
-      new: 日報の追加
       reporter: 作成者
       last_update: "最終更新 by %{user_name}"
     pagination:
@@ -231,9 +227,6 @@ ja:
       next: '次'
       truncate: '...'
     users:
-      index: ユーザーリスト
-      show: プロフィール
-      edit: プロフィール編集
       login: ログイン
       logout: ログアウト
       signup: アカウント登録
