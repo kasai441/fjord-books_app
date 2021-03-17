@@ -16,7 +16,7 @@
     <ul class="show_items show_items__report">
       <li class="show_item__comment_head">
         <div class="show_item">
-          <%= comment.user.name %>
+          <%= comment.user.name.present? ? comment.user.name : comment.user.email %>
         </div>
         <div class="show_item show_item__dummy">
         </div>
