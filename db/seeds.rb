@@ -95,42 +95,47 @@ User.order(id: :desc).each do |user|
 end
 
 # フォロー・フォロワーを作成
-users = User.all
-user  = User.find_by(name: 'Test Sunfish')
-followings = users[2..50]
-followers = users[3..40]
-followings.each { |following| user.follow(following) }
-followers.each { |follower| follower.follow(user) }
+User.transaction do
+  users = User.all
+  user  = User.find_by(name: 'Test Sunfish')
+  followings = users[2..50]
+  followers = users[3..40]
+  followings.each { |following| user.follow(following) }
+  followers.each { |follower| follower.follow(user) }
+end
 
 Report.destroy_all
 
-users = User.all[2..10]
-users.each do |user|
-  title = Faker::Games::StreetFighter.move
-  content = Faker::Games::StreetFighter.quote
-  user.reports.create!(title: title, content: content)
+Report.transaction do
+  users = User.all[2..10]
+  users.each do |user|
+    title = Faker::Games::StreetFighter.move
+    content = Faker::Games::StreetFighter.quote
+    user.reports.create!(title: title, content: content)
+  end
 end
 
 Comment.destroy_all
 
-users = User.all[11..15]
-reports = Report.all[1..10]
-users.each do |user|
-  reports.each do |report|
-    chara = Faker::Games::StreetFighter.character
-    comment = report.comments.new(content: chara)
-    comment.user_id = user.id
-    comment.save
+Comment.transaction do
+  users = User.all[11..15]
+  reports = Report.all[1..10]
+  users.each do |user|
+    reports.each do |report|
+      chara = Faker::Games::StreetFighter.character
+      comment = report.comments.new(content: chara)
+      comment.user_id = user.id
+      comment.save
+    end
   end
-end
-
-books = Book.all[1..10]
-users.each do |user|
-  books.each do |book|
-    genre = Faker::Book.genre
-    comment = book.comments.new(content: genre)
-    comment.user_id = user.id
-    comment.save
+  books = Book.all[1..10]
+  users.each do |user|
+    books.each do |book|
+      genre = Faker::Book.genre
+      comment = book.comments.new(content: genre)
+      comment.user_id = user.id
+      comment.save
+    end
   end
 end
 
