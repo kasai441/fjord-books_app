@@ -1,5 +1,5 @@
 <div class="form_container">
-  <%= form_with(model: @comment, url: polymorphic_url([:report, @comment])) do |form| %>
+  <%= form_with(model: comment, url: polymorphic_url([:report, comment])) do |form| %>
     <% if comment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -24,4 +24,5 @@
       <%= form.submit t('helpers.submit.update'), :class => "btn orange_btn form_btn" %>
     </div>
   <% end %>
+
 </div>
