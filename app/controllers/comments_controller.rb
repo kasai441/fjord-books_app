@@ -2,17 +2,16 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
+  before_action :set_writable, only: %i[new create]
 
   def new
-    @comment = Report.find(params[:report_id]).comments.new
+    @comment = @writable.comments.new
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-  end
+  def edit; end
 
   def create
-    @comment = Report.find(params[:report_id]).comments.new(comment_params)
+    @comment = @writable.comments.new(comment_params)
     @comment.user_id = current_user.id
 
     respond_to do |format|
@@ -50,6 +49,14 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, alert: t('controllers.common.alert_uncorrect_user', model: Comment.model_name.human, name: @comment.id) }
     end
+  end
+
+  def set_writable
+    @writable = if (id = params[:book_id])
+                  Book.find(id)
+                elsif (id = params[:report_id])
+                  Report.find(id)
+                end
   end
 
   def comment_params

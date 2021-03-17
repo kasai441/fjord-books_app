@@ -21,3 +21,5 @@
   <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
   <%= link_to t('views.common.edit'), edit_book_path(@book), class: "btn orange_btn" %>
 </div>
+
+<%= render 'comments/show', writable: @book %>

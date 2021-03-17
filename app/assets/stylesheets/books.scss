@@ -171,17 +171,9 @@ img {
   --book_new_h: #93d2f3;
   --report_new: #7FE27F;
   --report_new_h: #BAFDBA;
-  --user_new: var(--books);
-  --comment_new: var(--report_new);
-  --book_show: var(--books);
-  --report_show: var(--reports);
   --user_show: #ffbb3b;
   --user_show_h: #fde3b2;
-  --book_edit: var(--books);
-  --report_edit: var(--reports);
-  --user_edit: var(--user_show);
-  --comment_edit: var(--reports);
-  --session_new: var(--books);
+  --comment: lightgray;
   --logout: gray;
   --logout_h: #DDDDDD;
 }
@@ -339,23 +331,23 @@ body {
 }
 
 .user_new_title {
-  background-color: var(--user_new);
+  background-color: var(--books);
 }
 
 .session_new_title {
-  background-color: var(--session_new);
+  background-color: var(--books);
 }
 
 .comment_new_title {
-  background-color: var(--comment_new);
+  background-color: var(--comment);
 }
 
 .book_show_title {
-  background-color: var(--book_show);
+  background-color: var(--books);
 }
 
 .report_show_title {
-  background-color: var(--report_show);
+  background-color: var(--reports);
 }
 
 .user_show_title {
@@ -363,7 +355,7 @@ body {
 }
 
 .comment_show_title {
-  border: 0 solid var(--report_show);
+  border: 0 solid var(--comment);
   border-width: 2px 0 0 0;
   color: gray;
   font-size: 16px;
@@ -373,19 +365,19 @@ body {
 }
 
 .book_edit_title {
-  background-color: var(--book_edit);
+  background-color: var(--books);
 }
 
 .report_edit_title {
-  background-color: var(--report_edit);
+  background-color: var(--reports);
 }
 
 .user_edit_title {
-  background-color: var(--user_edit);
+  background-color: var(--user_show);
 }
 
 .comment_edit_title {
-  background-color: var(--comment_edit);
+  background-color: var(--comment);
 }
 
 .main_table {

@@ -5,7 +5,7 @@
       <%= Comment.model_name.human %>
     </p>
   </h3>
-  <% @report.comments.each do |comment| %>
+  <% writable.comments.each do |comment| %>
 
     <div class="show_picture show_picture__report">
       <div class="show_item show_item__report">
@@ -41,5 +41,5 @@
 
 
 <div class="actions">
-  <%= link_to t('views.common.title_new', name: Comment.model_name.human), new_report_comment_path(@report), class: "btn orange_btn" %>
+  <%= link_to t('views.common.title_new', name: Comment.model_name.human), new_polymorphic_url([writable, :comment]), class: "btn orange_btn" %>
 </div>
