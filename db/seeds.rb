@@ -74,7 +74,6 @@ User.transaction do
       name: name,
       postal_code: "123-#{n.to_s.rjust(4, '0')}",
       address: Faker::Address.full_address,
-      address: Faker::Address.full_address,
       self_introduction: "こんにちは、#{name}です。"
     )
   end

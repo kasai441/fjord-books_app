@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
     return if @comment.user == current_user
 
     respond_to do |format|
-      format.html { redirect_to root_url, alert: t('controllers.common.alert_uncorrect_user',model: Comment.model_name.human, name: @comment.id) }
+      format.html { redirect_to root_url, alert: t('controllers.common.alert_uncorrect_user', model: Comment.model_name.human, name: @comment.id) }
     end
   end
 

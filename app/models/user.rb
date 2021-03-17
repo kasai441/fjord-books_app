@@ -43,5 +43,4 @@ class User < ApplicationRecord
     relationship = active_relationships.find_by(following_id: user.id)
     relationship&.destroy!
   end
-
 end
