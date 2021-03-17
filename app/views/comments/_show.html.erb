@@ -5,6 +5,7 @@
       <%= Comment.model_name.human %>
     </p>
   </h3>
+  <%= t('views.common.no_comment', writable: writable.class.model_name.human) if writable.comments.empty? %>
   <% writable.comments.each do |comment| %>
 
     <div class="show_picture show_picture__report">

@@ -217,6 +217,7 @@ ja:
       destroy: 削除
       delete_confirm: よろしいですか？
       minimum_length: "%{length}文字以上"
+      no_comment: "この%{writable}にはコメントがまだありません。"
     reports:
       reporter: 作成者
       created_by: "更新 %{date} by %{name}"
