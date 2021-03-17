@@ -30,9 +30,9 @@
     </ul>
 
     <div class="actions">
-      <% if comment.writable.user == current_user %>
-        <%= link_to t('views.common.edit'), edit_report_comment_path(@report), class: "btn orange_btn" %>
-        <%#= link_to 'Destroy', report_comment_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+      <% if comment.user == current_user %>
+        <%= link_to t('views.common.edit'), edit_report_comment_path(comment), class: "btn orange_btn" %>
+        <%#= link_to t('views.common.destroy'), report_comment_path(comment), method: :delete, data: { confirm: t('views.common.delete_confirm') }, class: "btn red_btn" %>
       <% end %>
     </div>
 

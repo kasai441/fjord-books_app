@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: %i[edit update destroy]
 
   def index
     redirect_to root_url
@@ -55,13 +57,17 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      # @comment = Comment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def comment_params
-      params.require(:comment).permit(:content)
+  def set_comment
+    @comment = Comment.find(params[:id])
+    return if @comment.user == current_user
+
+    respond_to do |format|
+      format.html { redirect_to root_url, alert: t('controllers.common.alert_uncorrect_user',model: Comment.model_name.human, name: @comment.id) }
     end
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
 end

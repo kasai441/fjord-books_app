@@ -238,7 +238,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
-      alert_uncorrect_user: "日報 「%{name}」の編集権限がありません。"
+      alert_uncorrect_user: "%{model} 「%{name}」の編集権限がありません。"
   relationships:
     create:
       notice: "フォローしました。"
