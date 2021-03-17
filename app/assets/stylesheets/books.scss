@@ -172,6 +172,7 @@ img {
   --report_new: #7FE27F;
   --report_new_h: #BAFDBA;
   --user_new: var(--books);
+  --comment_new: var(--report_new);
   --book_show: var(--books);
   --report_show: var(--reports);
   --user_show: #ffbb3b;
@@ -342,6 +343,10 @@ body {
 
 .session_new_title {
   background-color: var(--session_new);
+}
+
+.comment_new_title {
+  background-color: var(--comment_new);
 }
 
 .book_show_title {

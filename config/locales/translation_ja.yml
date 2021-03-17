@@ -21,3 +21,5 @@ ja:
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+      comment:
+        content: 本文
