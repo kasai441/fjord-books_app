@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_044650) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_044650) do
     t.integer "follower_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["follower_id"], name: "index_user_follows_on_follower_id"
     t.index ["following_id", "follower_id"], name: "index_user_follows_on_following_id_and_follower_id", unique: true
     t.index ["following_id"], name: "index_user_follows_on_following_id"
   end
