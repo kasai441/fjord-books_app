@@ -54,11 +54,22 @@ end
 
 User.destroy_all
 
+User.create!(
+  email: 'example@test.com',
+  password: 'password',
+  name: 'Test Sunfish',
+  postal_code: '123-4567',
+  address: 'サンゴ区エビ1-2-3 プランクトン456',
+  self_introduction: 'わたしは　おおくて　めだつ　さかな　です'
+)
+sunfish = 'app/assets/images/sunfish.png'
+User.find_by(name: 'Test Sunfish').avatar.attach(io: File.open(sunfish), filename: 'sunfish.png')
+
 User.transaction do
-  50.times do |n|
+  30.times do |n|
     name = Faker::Name.name
     User.create!(
-      email: "sample-#{n}@example.com",
+      email: "sample-#{n}@test.com",
       password: 'password',
       name: name,
       postal_code: "123-#{n.to_s.rjust(4, '0')}",
@@ -68,9 +79,17 @@ User.transaction do
   end
 end
 
-User.order(:id).each do |user|
-  image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
+User.where.not(id: 1).order(:id).each do |user|
+  image_url = Faker::Avatar.image(slug: user.email, size: '30x30')
   user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
 end
+
+# フォロー・フォロワーを作成
+users = User.all
+user  = User.find_by(name: 'Test Sunfish')
+followings = users[2..50]
+followers = users[3..40]
+followings.each { |following| user.follow!(following) }
+followers.each { |follower| follower.follow!(user) }
 
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output
