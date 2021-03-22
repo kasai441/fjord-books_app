@@ -3,16 +3,16 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
-  # Override
   def update_resource(resource, params)
-    if params[:password].blank?
-      # パスワード変更を伴わない場合はオーバーライドする
-      # current_passwordが残っていると、これを更新しようとしてエラーになるのでparamsから削除
-      params.delete(:current_password)
-      resource.update_without_password(params)
+    if params[:password].present? || params[:password_confirmation].present? || params[:current_password].present?
+      resource.update_with_password(params)
     else
-      # パスワード変更を伴う場合はデフォルトの実装を使う
-      super
+      resource.update_without_password(params.except(:current_password))
     end
+  end
+
+  def build_resource(hash = {})
+    hash[:uid] = User.create_unique_string
+    self.resource = resource_class.new_with_session(hash, session)
   end
 end

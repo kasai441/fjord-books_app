@@ -63,6 +63,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
-
+gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
