@@ -13,3 +13,23 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+
+class Auth
+  attr_accessor :provider, :uid, :info
+
+  def initialize(provider: '', uid: '', info: Info.new)
+    @provider = provider
+    @uid = uid
+    @info = info
+  end
+end
+
+class Info
+  attr_accessor :name, :email
+
+  def initialize(name: '', email: '')
+    @name = name
+    @email = email
+  end
+end
