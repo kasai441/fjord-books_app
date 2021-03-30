@@ -44,6 +44,15 @@ end
 
 User.destroy_all
 
+User.create!(
+  email: 'test@mail.com',
+  password: 'password',
+  name: 'test',
+  postal_code: '123-4567',
+  address: 'マンボウ区エビ1-2-3 プランクトン456',
+  self_introduction: 'わたしは　すいぞくかんで　めだつ　さかな　です'
+)
+
 50.times do |n|
   name = Faker::Name.name
   User.create!(
