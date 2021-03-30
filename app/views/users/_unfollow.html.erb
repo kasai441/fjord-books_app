@@ -1,0 +1,5 @@
+<%= form_with(url: user_relationships_path(@user), method: :delete, local: true) do |f| %>
+  <div class="actions">
+    <%= f.submit "Unfollow", class: "btn red_btn" %>
+  </div>
+<% end %>

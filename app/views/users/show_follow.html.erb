@@ -1,4 +1,4 @@
-<h2 class="title users_title"><%= t('views.users.index') %></h2>
+<h2 class="title users_title"><%= "#{@user.name} の #{@title}" %></h2>
 <table class="main_table">
   <thead>
   <tr>
@@ -14,7 +14,7 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <td><%= image_tag user.avatar.variant(gravity: :center, resize_to_fill: [30, 30], crop:"30x30+0+0").processed if user.avatar.attached? %></td>
+      <td><%= image_tag user.avatar.variant(gravity: :center, resize:"50x50^", crop:"50x50+0+0").processed if user.avatar.attached? %></td>
       <td><%= user.email %></td>
       <td><%= user.name %></td>
       <td><%= user.postal_code %></td>
@@ -23,9 +23,6 @@
       <% if current_user == user %>
         <td class="nowrap"><%= link_to t('views.common.edit'), edit_user_registration_path %></td>
         <td class="nowrap"><%= link_to t('views.common.destroy'), user_registration_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
-      <% else %>
-        <td></td>
-        <td></td>
       <% end %>
     </tr>
   <% end %>
@@ -33,3 +30,7 @@
 </table>
 
 <div class="pagination"><%= paginate @users %></div>
+
+<div class="actions">
+  <%= link_to t('views.common.back'), @user, class: "btn white_btn" %>
+</div>

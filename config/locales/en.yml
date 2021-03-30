@@ -215,10 +215,11 @@ en:
     pm: pm
   views:
     common:
+      index: "Books List"
       show: Show
       edit: Edit
       destroy: Destroy
-      new: "New record"
+      new: "New book"
       back: Back
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
@@ -229,25 +230,16 @@ en:
     pagination:
       first: First
       last: Last
-      previous: Prev
+      previous: Previous
       next: Next
       truncate: '...'
-  layouts:
-    application:
-      menu: Menu
-      sign_in_as: "Sign-in as %{email}"
-  users:
-    show:
-      followings: "%{count} Following"
-      followers: "%{count} Followers"
-      create: Follow
-      destroy: Unfollow
-    followings:
-      index:
-        title: Following
-    followers:
-      index:
-        title: Followers
+    users:
+      index: "All Users"
+      show: "Profile"
+      edit: "Edit Profile"
+      login: "Log In"
+      logout: "Log Out"
+      signup: "Sign Up"
   controllers:
     common:
       notice_create: "%{name} was successfully created."

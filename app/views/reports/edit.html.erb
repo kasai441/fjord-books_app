@@ -1,0 +1,9 @@
+<h2 class="title report_edit_title">
+  <%= t('views.common.title_edit', name: Report.model_name.human) %>
+</h2>
+
+<%= render 'form', report: @report %>
+
+<div class="actions">
+  <%= button_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') }, class: "btn red_btn" %>
+</div>

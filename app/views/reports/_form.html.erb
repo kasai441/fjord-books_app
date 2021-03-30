@@ -1,0 +1,33 @@
+<div class="form_container">
+
+  <%= form_with(model: report, local: true) do |form| %>
+    <% if report.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+        <ul>
+          <% report.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <ul class="form_items">
+      <li class="field">
+        <%= form.label :title, class: 'form_items__label' %>
+        <%= form.text_field :title, class: 'form_items__content' %>
+      </li>
+      <li class="field">
+        <%= form.label :content, class: 'form_items__label' %>
+        <%= form.text_area :content, class: 'form_items__content form_items__textarea' %>
+      </li>
+    </ul>
+
+    <div class="actions">
+      <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
+      <%= form.submit t('helpers.submit.update'), :class => "btn orange_btn form_btn" %>
+    </div>
+  <% end %>
+
+</div>

@@ -54,11 +54,22 @@ end
 
 User.destroy_all
 
+User.create!(
+  email: 'example@test.com',
+  password: 'password',
+  name: 'Test Sunfish',
+  postal_code: '123-4567',
+  address: 'サンゴ区エビ1-2-3 プランクトン456',
+  self_introduction: 'わたしは　おおくて　めだつ　さかな　です'
+)
+sunfish = 'app/assets/images/sunfish.png'
+User.find_by(name: 'Test Sunfish').avatar.attach(io: File.open(sunfish), filename: 'sunfish.png')
+
 User.transaction do
   55.times do |n|
     name = Faker::Name.name
     User.create!(
-      email: "sample-#{n}@example.com",
+      email: "sample-#{n}@test.com",
       password: 'password',
       name: name,
       postal_code: "123-#{n.to_s.rjust(4, '0')}",
@@ -68,8 +79,8 @@ User.transaction do
   end
 end
 
-User.order(:id).each do |user|
-  image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
+User.where.not(id: 1).order(:id).each do |user|
+  image_url = Faker::Avatar.image(slug: user.email, size: '30x30')
   user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
 end
 
@@ -80,6 +91,51 @@ Relationship.destroy_all
 User.order(id: :desc).each do |user|
   User.where('id < ?', user.id).each do |other|
     user.follow(other)
+  end
+end
+
+# フォロー・フォロワーを作成
+User.transaction do
+  users = User.all
+  user  = User.find_by(name: 'Test Sunfish')
+  followings = users[2..50]
+  followers = users[3..40]
+  followings.each { |following| user.follow(following) }
+  followers.each { |follower| follower.follow(user) }
+end
+
+Report.destroy_all
+
+Report.transaction do
+  users = User.all[2..10]
+  users.each do |user|
+    title = Faker::Games::StreetFighter.move
+    content = Faker::Games::StreetFighter.quote
+    user.reports.create!(title: title, content: content)
+  end
+end
+
+Comment.destroy_all
+
+Comment.transaction do
+  users = User.all[11..15]
+  reports = Report.all[1..10]
+  users.each do |user|
+    reports.each do |report|
+      chara = Faker::Games::StreetFighter.character
+      comment = report.comments.new(content: chara)
+      comment.user_id = user.id
+      comment.save
+    end
+  end
+  books = Book.all[1..10]
+  users.each do |user|
+    books.each do |book|
+      genre = Faker::Book.genre
+      comment = book.comments.new(content: genre)
+      comment.user_id = user.id
+      comment.save
+    end
   end
 end
 

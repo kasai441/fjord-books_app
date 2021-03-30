@@ -1,0 +1,28 @@
+<div class="form_container">
+  <%= form_with(model: comment, url: polymorphic_url([comment.writable, comment])) do |form| %>
+    <% if comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+        <ul>
+          <% comment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <ul class="form_items">
+      <li class="field">
+        <%= form.label :content, class: 'form_items__label' %>
+        <%= form.text_area :content, class: 'form_items__content form_items__textarea', required: true %>
+      </li>
+    </ul>
+
+    <div class="actions">
+      <%= link_to t('views.common.back'), :back, class: "btn white_btn" %>
+      <%= form.submit t('helpers.submit.update'), :class => "btn orange_btn form_btn" %>
+    </div>
+  <% end %>
+
+</div>

@@ -10,34 +10,29 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <div class="menu-container">
-        <div class="title"><%= t('.menu') %></div>
-        <ul>
-          <li>
-            <%= link_to Book.model_name.human, books_path %>
-          </li>
-          <li>
-            <%= link_to User.model_name.human, users_path %>
-          </li>
-        </ul>
-        <div class="title"><%= t('.sign_in_as', email: current_user.email) %></div>
-        <ul>
-          <li>
-            <%= link_to t('devise.registrations.edit.title'), edit_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
-    <% if notice.present? %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p id="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <ul class="navbar_items">
+        <% if user_signed_in? %>
+          <li class="navbar_item books"><%= link_to t('views.common.title_index', name: Book.model_name.human), books_path, class: 'navbar_link' %></li>
+          <li class="navbar_item new_book"><%= link_to t('views.common.title_new', name: Book.model_name.human), new_book_path, class: 'navbar_link' %></li>
+          <li class="navbar_item reports"><%= link_to t('views.common.title_index', name: Report.model_name.human), reports_path, class: 'navbar_link' %></li>
+          <li class="navbar_item new_report"><%= link_to t('views.common.title_new', name: Report.model_name.human), new_report_path, class: 'navbar_link' %></li>
+          <li class="navbar_item dummy"><a class="navbar_link"></a></li>
+          <li class="navbar_item users"><%= link_to t('views.common.title_index', name: User.model_name.human), users_path, class: 'navbar_link' %></li>
+          <li class="navbar_item email"><%= link_to current_user.email, current_user, class: 'navbar_link' %></li>
+          <li class="navbar_item logout"><%= link_to t('views.users.logout'), destroy_user_session_path, method: :delete, class: 'navbar_link'  %></li>
+        <% end %>
+      </ul>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

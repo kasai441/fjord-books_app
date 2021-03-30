@@ -207,44 +207,39 @@ ja:
     pm: 午後
   views:
     common:
-      show: 詳細
-      edit: 編集
-      destroy: 削除
-      new: 新規作成
-      back: 戻る
-      delete_confirm: よろしいですか？
-      title_new: "%{name}の新規作成"
+      title_index: "%{name}のリスト"
+      title_new: "%{name}の追加"
       title_edit: "%{name}の編集"
       title_show: "%{name}の詳細"
-      sign_out: ログアウト
+      edit: 編集
+      show: 詳細
+      back: 戻る
+      destroy: 削除
+      delete_confirm: よろしいですか？
       minimum_length: "%{length}文字以上"
+      no_comment: "この%{writable}にはコメントがまだありません。"
+    reports:
+      reporter: 作成者
+      created_by: "更新 %{date} by %{name}"
+      created_at: "更新 %{date}"
     pagination:
       first: '最初'
       last: '最後'
       previous: '前'
       next: '次'
       truncate: '...'
-  layouts:
-    application:
-      menu: メニュー
-      sign_in_as: "%{email} としてログイン中"
-  users:
-    show:
-      followings: "%{count} フォロー"
-      followers: "%{count} フォロワー"
-      create: フォローする
-      destroy: フォロー解除する
-    followings:
-      index:
-        title: フォロー
-    followers:
-      index:
-        title: フォロワー
+    users:
+      login: ログイン
+      logout: ログアウト
+      signup: アカウント登録
+    registrations:
+      password_change_needs_current_password: パスワードの変更には現在のパスワード入力が必要です
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      alert_uncorrect_user: "%{model} 「%{name}」の編集権限がありません。"
   relationships:
     create:
       notice: "フォローしました。"
