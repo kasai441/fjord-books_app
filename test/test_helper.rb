@@ -14,7 +14,6 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-
 class Auth
   attr_accessor :provider, :uid, :info
 

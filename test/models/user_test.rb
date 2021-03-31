@@ -71,5 +71,4 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'authenticated@example.com', user.email
     assert_equal 20, user.password.size
   end
-
 end
