@@ -15,4 +15,9 @@ class ReportTest < ActiveSupport::TestCase
     assert_not one.editable?(target_user)
   end
 
+  test '#created_on should return created date' do
+    one = reports(:one)
+    one.created_at = Date.new(2021, 3, 31)
+    assert_equal Date.new(2021, 3, 31), one.created_on
+  end
 end
