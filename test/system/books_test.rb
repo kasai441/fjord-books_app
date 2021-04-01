@@ -15,6 +15,9 @@ class BooksTest < ApplicationSystemTestCase
     click_on '詳細'
     assert_text '最初の本'
     assert_text '最初に表示される'
+
+    assert_text 'alice@example.com'
+    assert_text 'どうも'
   end
 
   test 'creating a Book' do

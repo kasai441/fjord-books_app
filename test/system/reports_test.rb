@@ -14,6 +14,9 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on '詳細'
     assert_text '最初に書いた日報'
+
+    assert_text 'bob@example.com'
+    assert_text 'こんにちは'
   end
 
   test 'creating a Report' do
