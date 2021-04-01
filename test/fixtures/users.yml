@@ -1,8 +1,8 @@
-one:
-  email: one@example.com
+alice:
+  email: alice@example.com
 
-two:
-  email: two@example.com
+bob:
+  email: bob@example.com
 
 exiting:
   name: existing
