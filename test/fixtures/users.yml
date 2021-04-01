@@ -1,6 +1,7 @@
 alice:
   email: alice@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  self_introduction: 不思議の国のアリスの主人公です
 
 bob:
   email: bob@example.com
