@@ -10,12 +10,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on 'ログイン'
   end
 
-  test 'visiting the index' do
-    visit books_url
-    assert_selector 'h1', text: '本'
-    assert_text '最初の本'
-  end
-
   test 'showing a Book' do
     visit books_url
     click_on '詳細'

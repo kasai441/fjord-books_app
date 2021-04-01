@@ -2,5 +2,5 @@
 
 default_report:
   user: alice
-  title: MyString
-  content: MyText
+  title: 最初の日報
+  content: 最初に書いた日報
